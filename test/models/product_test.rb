@@ -32,10 +32,10 @@ class ProductTest < ActiveSupport::TestCase
            			http://a.b.c/x/y/z/frog.png frog.jpeg}
   		bad = %w{ frog.doc frog.png/less frog.png.less }
 
-  	#ok.each do |url|
-    	#product.image_url = url
-    	#assert product.valid?, "#{url} should be a valid image url"
-  	#end
+  	ok.each do |url|
+    	product.image_url = url
+    	assert product.valid?, "#{url} should be a valid image url"
+  	end
 
   	bad.each do |url|
     	product.image_url = url
